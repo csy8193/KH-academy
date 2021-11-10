@@ -1,0 +1,16 @@
+무조건
+
+// 프로젝트 시작전
+1. git pull origin - 저장소에 있는 프로젝트를 받아온다.(무조건 프로젝트 하기전에 입력해야함!!!! 무지중요)
+
+// 프로젝트 마무리 후 업로드
+2. git status
+3. git add .(전체 파일)
+4. git commit -m "메모"
+5. git push origin main(or master) - 파란 괄호안에있는단어 쓰시오.
+
+
+// 폴더삭제 ( 로컬 디렉토리, git 모두에서 삭제됨)
+git rm -rf 폴더명
+git commit -m "delete folder"
+git push origin main
