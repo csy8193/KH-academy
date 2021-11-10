@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+</head>
+<body>
+    <h1>간이 계산기 만들기</h1>
+    첫번째 값 : <input type="number"> <br>
+    두번째 값 : <input type="number"> <br>
+    <button onclick="calc('+');">+</button>
+    <button onclick="calc('-');">-</button>
+    <button onclick="calc('*');">*</button>
+    <button onclick="calc('/');">/</button>
+    <button onclick="calc('%');">%</button>
+
+    <div>계산 결과 : <span></span></div>
+
+    <script>
+        function calc(value){
+            const num = document.getElementsByTagName('input');
+            const result = document.querySelector('div > span');
+
+            let sum = 0;
+
+            switch(value){
+                case '+' : sum = Number(num[0].value) + Number(num[1].value); break;
+                case '-' : sum = Number(num[0].value) - Number(num[1].value); break;
+                case '*' : sum = Number(num[0].value) * Number(num[1].value); break;
+                case '/' : sum = Number(num[0].value) / Number(num[1].value); break;
+                case '%' : sum = Number(num[0].value) % Number(num[1].value); break;
+            }
+
+            result.innerHTML = sum;
+        }
+
+    </script>
+</body>
+</html>

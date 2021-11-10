@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+    <style>
+        .area{
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>배열(Array)</h1>
+    <pre>
+        배열 : 변수가 연속적으로 나열되어 있는 것
+
+        자바스크립트에서의 변수
+            -> 값(리터럴)이 저장될 때 까지 자료형이 지정되지 않음
+
+        * 자바스크립트의 배열은 자료형이 정해져 있지 않은 배열
+            == 배열 요소에 어떤 자료형이 대입할 수 있다
+            == Java의 List와 비슷하다
+    </pre>
+
+    <button id="arr-btn1">배열 확인1</button>
+    <div id="arr-div1" class="area"></div>
+
+    <hr>
+
+
+    <h2>배열 관련 함수</h2>
+    <pre>
+        push("값") : 배열 맨 뒤에 요소를 추가 (마지막 요소로 밀어 넣음)
+        pop() : 배열 맨 뒤에 요소를 꺼내옴 (마지막 요소가 튀어 나옴)
+
+        indexOf("") : 값이 일치하는 요소의 인덱스를 반환. 없으면 -1
+        lastIndexOf("값") : 일치하는 값을 가지는 요소를 뒤에서 부터 검색하여 인덱스를 반환
+                            없으면 -1
+        
+        toString() : 배열 내 모든 요소를 하나의 문자열 반환 (구분자 , )
+        join("구분자") : 배열 내 모든 요소를 하나의 문자열 반환 (지정된 구분자 사용)
+
+        sort( [정렬기준이 작성된 함수] ) : 배열 내 요소를 오름차순으로 정렬
+        reverse() : 배열 순서를 반대로 만듦
+    </pre>
+
+    <button id="arr-btn2">배열 관련 함수 확인</button>
+
+
+    <script src="js/08_배열.js"></script>
+</body>
+</html>

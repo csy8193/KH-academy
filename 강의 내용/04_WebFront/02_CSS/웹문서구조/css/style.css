@@ -1,0 +1,323 @@
+@font-face {
+    font-family: 'BMHANNAAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body *{
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+div{
+}
+
+/**** 전체 레이아웃 설정 ****/
+.container{
+    width: 1000px;
+    height: 800px;
+    margin: auto;
+}
+
+.header{
+    width: 100%;
+    height: 20%;
+}
+
+/* header 컬럼 분할 */
+.header > div{
+    float: left;
+    height: 100%;
+}
+
+.header > div:nth-of-type(1){
+    width: 15%;
+    position: relative;
+}
+
+
+.header > div:nth-of-type(2){
+    width: 70%;
+    position: relative;
+}
+.header > div:nth-of-type(3){
+    width: 15%;
+}
+
+.nav{
+    width: 100%;
+    height: 5%;
+
+}
+
+.content{
+    width: 100%;
+    height: 55%;
+}
+
+/* content 컬럼 분할 */
+.content > div{
+    float: left;
+    height: 100%;
+}
+
+.content > div:nth-of-type(1){
+    width: 20%;
+}
+.content > div:nth-of-type(2){
+    width: 60%;
+}
+.content > div:nth-of-type(3){
+    width: 20%;
+}
+
+.footer{
+    width: 100%;
+    height: 20%;
+
+}
+
+
+/**** header 설정 ****/
+
+/* home-logo 스타일 */
+
+#home-logo{
+    width: 70%; 
+    /* 이미지는 width 또는 height 크기만 지정한 경우 나머지를 같은 비율로 자동 조정 */
+    border: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#search-form{
+    width: 80%;
+    height: 20%;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+}
+
+#search-form > div{
+    height: 100%;
+    float: left;
+}
+
+#search-form > div:nth-child(1){ width: 80%;}
+#search-form > div:nth-child(2){ width: 20%;}
+
+#search-form > div > input{
+    width: 100%;
+    height: 100%;
+    font-size: 1em;
+    /* em : 부모 요소의 글자 크기에 대한 상대 크기 */
+}
+
+#search-form > div > button{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 로그인 폼 */
+
+/* 아이디, 비밀번호 + 회원가입 버튼 전체를 감싸는 영역 */
+#login-area{
+    width: 100%;
+    height: 100px;
+}
+
+/* 아이디, 비밀번호 입력 form태그 */
+#login-form{
+    width: 100%;
+    height: 70%;
+}
+
+/* 회원가입, ID/PW 찾기 div태그 */
+#login-form + div{
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    line-height: 28px;
+}
+
+#login-form + div > a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+}
+
+/* 아이디, 비밀번호 영역 + 버튼 영역 */
+#login-form > div{
+    height: 100%;
+    float: left;
+}
+
+/* 아이디, 비밀번호 영역 / 버튼 영역 2분할 */
+#login-form > div:nth-of-type(1){
+    width: 75%;
+}
+#login-form > div:nth-of-type(2){
+    width: 25%;
+}
+
+/* 아이디 / 비밀번호 영역 2분할 */
+#login-form > div:nth-of-type(1) > div{
+    height: 50%;
+    width: 100%;
+}
+
+/* 아이디, 비밀번호 input 태그 */
+#login-form > div:nth-of-type(1) > div > input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.4em;
+}
+
+/* 로그인 버튼 */
+#login-form > div:nth-of-type(2) > button{
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+}
+
+/**** content 썸네일 부분 ****/
+.th-list{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    /* 부모 요소에 크기가 지정되지 않으면 자식 요소의 크기 지정 시 % 사용 불가 */
+    margin: 0; /* ul 태그 고유 padding 제거 */
+    padding: 0; /* ul 태그 고유 margin 제거 */
+    border: 1px solid black;
+}
+
+/* 목록 1개 */
+.th-list > li{
+    width: 100%;
+    height: 25%;
+}
+
+
+.th-list > li > *{
+    float: left;
+    height: 100%;
+}
+
+/* 썸네일 영역(a태그) */
+.th-list > li > a {
+    width: 25%;
+    /* inline 요소가 float 상태인 경우 width, height 적용 가능 */
+    position: relative;
+}
+
+.th-list > li > a > img{
+    width: 95%;
+    position: absolute;
+    right: 0; left: 0; top: 0; bottom: 0;
+    margin: auto;
+}
+
+/* 제목 + 내용 영역 */
+.title-content {
+    width: 75%;
+}
+
+.title-content > * {
+    width: 100%;
+    margin: 0;
+}
+.title-content > h4 {
+    height: 25%;
+}
+.title-content > h4 > a {
+    text-decoration: none;
+    color: #777;
+    font-family: BMHANNAAir;
+}
+
+.title-content > p {
+    height: 75%;
+}
+
+
+/**** navigator ***/
+
+@font-face {
+        font-family: 'SBAggroB';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .nav ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    #navi > li{
+        float: left;
+        height: 100%;
+        width: 15%;
+        text-align: center;
+        line-height: 34px;
+        position: relative;
+    }
+
+    #navi a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: rgb(131, 131, 250);
+        font-weight: bold;
+        font-size: 20px;
+        font-family: 'SBAggroB';
+    }
+
+    #navi a:hover{
+        background-color: #eee;
+        color: red;
+    }
+
+    /* 서브 메뉴를 감싸고 있는 ul태그의 높이를 0으로 지정 */
+    #navi > li > ul{
+        height: 0;
+        z-index: 100;
+        position: absolute;
+    }
+
+    /* 서브 메뉴의 높이를 0으로 지정 */
+    #navi > li > ul > li{
+        height: 0;
+        border: none;
+    }
+
+    /* 서브메뉴의 압축되지 않은 글자를 화면에서 안보이게 하기 */
+    #navi > li > ul > li > a{
+        display: none; /* 요소는 존재하나 화면에 보이지 않음 */
+        background-color: white;
+
+    }
+    /* 메인메뉴에 마우스가 올라갔을 때 해당 li태그 후손 중 ul태그 자식 li태그 선택 */
+    #navi > li:hover ul > li{
+        height: 40px;
+    }
+
+    #navi > li:hover ul > li > a{
+        display: block;
+    }
+
+    #navi> li > ul > li{
+        transition-duration: 0.25s;
+    }
+    #navi *{
+        border: none;
+    }

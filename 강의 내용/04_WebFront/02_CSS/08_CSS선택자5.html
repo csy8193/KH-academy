@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자 5</title>
+    <style>
+        /* :only-child */
+        /* #test1의 자식 중 p태그가 유일한 자식인 경우 선택 */
+        #test1 > p:only-child{
+            background-color: crimson;
+        }
+
+        #test2 > p:only-of-type{
+            background-color: deeppink;
+        }
+
+        /* :empty */
+        #test3 > p:empty{
+            width: 50px;
+            height: 50px;
+            background-color: deepskyblue;
+        }
+
+        /* 여러 선택자 동시 선택(선택자, 선택자, ....) */
+        #test4-1, #test4-2{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+
+        /* 특정 요소 내부에 있는 클래스 선택하기 
+           (선택자.클래스명 -> 선택된 요소가 특정 클래스를 가지고 있을 경우)
+        */
+
+        /* #test5 자식 중 클래스가 cls5인 요소 선택 */
+        #test5 > .cls5{
+            background: aquamarine;
+        }
+
+        /* li태그 중 클래스가 cls5인 요소 선택 */
+        li.cls5{
+            background: red;
+        }
+        </style>
+</head>
+<body>
+    <h3>:only-child -> 특정 요소의 자식이 하나 밖에 없을 때 선택</h3>
+    
+    <div id="test1">
+        <p>테스트1</p>
+        <pre>요소가 추가되었기 때문에 유일한 자식이 아니게 됨</pre>
+    </div>
+    
+    <hr>
+
+    <h3>:only-of-type -> 특정 요소의 자식중 같은 유형의 형제요소가 없을 때 선택</h3>
+    <div id="test2">
+        <p>테스트1</p>
+        <pre>테스트2</pre>
+        <p>테스트1 p태그와 동일한 형식의 태그가 추가되었기 때문에 유일한 유형이 아니게됨</p>
+    </div>
+
+    <hr>
+
+    <h3> :empty -> 자식이 없는 요소를 선택</h3>
+    <pre>여기서 말하는 자식은 태그 또는 내용(문자, 띄어쓰기) 모두를 포함한다</pre>
+    <div id="test3">
+        <p></p>
+
+        <p>내용</p>
+    </div>
+
+    <hr>
+
+    <h3>여러 선택자 동시 선택</h3>
+
+    <div id="test4-1">테스트1</div>
+    <div id="test4-2">테스트2</div>
+    
+
+    <hr>
+
+    <h3>특정 요소 내부에 있는 클래스 선택하기</h3>
+
+    <ul id="test5">
+        <li class="cls5">1</li>
+        <li class="cls5">2</li>
+        <li class="cls5">3</li>
+        <li>4</li>
+        <li>5</li>
+        <li class="cls5">6</li>
+        <li class="cls5">7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <div class="cls5">테스트</div>
+</body>
+</html>

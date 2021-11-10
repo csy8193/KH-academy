@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색폼 만들기</title>
+
+    <style>
+        body * {
+            box-sizing: border-box;
+        }
+        div{
+            border: 1px solid black;
+        }
+        .header-2{
+            width: 700px;
+            height: 160px;
+            position: relative;
+        }
+
+        #search-form{
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        #search-form > div{
+            height: 100%;
+            float: left;
+        }
+
+        #search-form > div:nth-child(1){ width: 80%;}
+        #search-form > div:nth-child(2){ width: 20%;}
+
+        #search-form > input{
+            width: 80%;
+            height: 20%;
+            font-size: 1em;
+            
+            /* em : 부모 요소의 글자 크기에 대한 상대 크기 */
+        }
+
+        #search-form > button{
+            width: 20%;
+            height: 20%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="header-2">
+        <form id="search-form"> <!-- div + 서버 제출 -->
+                <input type="search" name="searchValue">
+            
+                <button>검색</button> <!-- 기본값 : type="submit" -->
+            
+        </form>
+    </div>
+</body>
+</html>
