@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>정규표현식</title>
 </head>
+
+<style>
+    #result{
+        display: inline-block;
+        height: 20px;
+        width: 400px;
+        font-size: 0.8em;
+        font-weight: bold;
+        font-family: "맑은 고딕";
+    }
+
+    .validation{ color: green; } /* 유효 */
+    .invalidation{ color: red; } /* 무효 */
+
+</style>
 <body>
     
     <h1>정규 표현식(Regular Expression)</h1>
@@ -80,7 +95,38 @@
     <pre>
         * : 0개 이상 == 0번 이상 반복
         + : 1개 이상 == 1번 이상 반복
+        . : 개행 문자를 제외한 모든 단일 문자(문자 한칸)
+
+        수량 관련 문자열
+        a{5} : a가 5개 == aaaaa
+        a{2,5} : a가 2개 이상, 5개 이하 == aa ~ aaaaa
+        a{2,} : a가 2개 이상
+        a{,5} : a가 5개 이하
     </pre>
+
+    <button id="btn4">추가 메타문자 확인</button>
+
+    <hr>
+
+    <h4>주민등록번호 검사</h4>
+    주민등록번호 입력("-" 포함)
+    <input type="text" id="input1" maxlength="14" size="14"><button id="btn5">검사</button>
+    <br>
+    <span id="result"></span>
+
+    <hr>
+
+    <h3>flag 문자</h3>
+    <pre>
+        정규표현식 객체 뒤에 붙이는 문자
+
+        g : 문자열 전체를 검색(전역 비교)
+        i : 대소문자를 가리지 않고 비교
+        m : 여러 줄의 검사를 수행
+
+    </pre>
+
+    <button id="btn6">flag 문자 확인</button>
 
     <script src="js/13_정규표현식.js"></script>
 </body>
