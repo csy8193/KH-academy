@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 선택자</title>
+</head>
+<body>
+    <h1>입력 양식 필터 선택자</h1>
+    <pre>
+        $("input:타입명") --> input 태그 전용 선택자
+
+        $(input[type="타입명"]) --> 기본 속성 선택자
+
+    </pre>
+
+    텍스트 : <input type="text"> <br>
+    체크박스 : <input type="checkbox">
+    파일 : <input type="file">
+
+    <hr>
+    <h1>순서에 따른 필터 선택자</h1>
+    <table>
+        <tr><th>이름</th><th>혈액형</th><th>지역</th></tr>
+        <tr><td>홍길동</td><td>A형</td><td>서울</td></tr>
+        <tr><td>김영희</td><td>B형</td><td>경기도</td></tr>
+        <tr><td>김삼순</td><td>O형</td><td>충청도</td></tr>
+        <tr><td>김민철</td><td>AB형</td><td>경상도</td></tr>
+        <tr><td>박철수</td><td>O형</td><td>강원도</td></tr>
+        <tr><td colspan="2">총원</td><td>5</td></tr>
+     </table>
+
+
+     <hr>
+
+
+     <h1>prop() 메소드</h1>
+     <pre>
+         attribute(속성) : type, class, id, name, value 등
+                           작성 시 속성="속성값" 형태로 작성하는 것을 attribute라고 한다
+
+
+         property(성질) : checked, selected 등
+                          작성 시 속성만 작성하는 것을 property라고 한다
+     </pre>
+
+
+     <input type="checkbox" name="hobby" value="football" checked>축구<br>
+     <input type="checkbox" name="hobby" value="baseball">야구<br>
+     <input type="checkbox" name="hobby" value="basketball">농구<br>
+     <button id="btn1">확인</button>
+
+
+     
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        // 입력 양식 필터 선택자
+        $("input:text").css("backgroundColor", "red");
+        $("input:checkbox").css("width", "50px").css("height", "50px");
+        $("input:file").css("backgroundColor", "yellow");
+
+        // 순서에 따른 필터 선택자
+
+        // odd: 홀수, even: 짝수
+        // $("tr:odd") : tr요소 중 홀수 번째 인덱스 요소를 모두 선택
+        $("tr:odd").css("backgroundColor", "#ccc"); // 홀수 인덱스
+        $("tr:even").css("backgroundColor", "yellow"); // 짝수 인덱스
+
+        $("tr:first").css("backgroundColor", "black").css("color", "white");
+        
+        $("tr:last").css("backgroundColor", "tomato").css("color", "white");
+
+        /* 
+        table > tr:first-child -> 첫 번째
+        table > tr:last-child -> 마지막
+
+        table > tr:nth-child(2n) -> 짝수
+        table > tr:nth-child(2n+1) -> 홀수
+        
+        */
+
+
+        // prop() 메소드 확인
+        $("#btn1").on("click", () => {
+
+            // name 속성값이 hobby인 요소들을 모두 얻어와
+            // 그중 check된 요소의 값을 콘솔에 출력
+            const hobbyList = $("input[name='hobby']");
+
+            const checkedList = [];
+            const unCheckedList = [];
+
+            hobbyList.css("width", "15px").css("height", "15px");
+
+            for(let i=0; i<hobbyList.length; i++){
+                // console.log($(hobbyList[i]).val());
+
+                // check된 요소 찾기
+                if( $(hobbyList[i]).prop("checked") ){
+                    // hobbyList i번째 요소에 checked 속성이 있을 경우 true 반환
+                    checkedList.push( $(hobbyList[i]).val() );
+
+                }else{ // 체크가 안되어 있는 경우
+                    unCheckedList.push( $(hobbyList[i]).val() );
+
+                }
+
+
+
+
+                // hobbyList는 jQuery 선택자로 얻어온 요소들이 배열로 저장되어 있어
+                // jQuery 메소드가 사용 가능하지만
+                // 하지만, hobbyList에서 [0], [1] 형식으로 하나씩 꺼낸 요소들은
+                // jQuery가 아닌 JS로 선택된 요소로 취급된다
+                // -> 그래서 hobbyList의 각 요소는 jQeury 메소드 사용이 안된다
+
+                // 단, $(hobbyList[0]).val() 과 같이
+                // $() jQuery 선택자로 묶으면 사용 가능
+            }
+
+            console.log("checkedList : " + checkedList);
+            console.log("unCheckedList : " + unCheckedList);
+        });
+
+    </script>
+</body>
+</html>
