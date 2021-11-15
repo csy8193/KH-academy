@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 스타일1</title>
+    <link rel="stylesheet" type="text/css" href="css/03_레이아웃스타일1.css">
+</head>
+<body>
+    <h1>레이아웃 (Layout)</h1>
+    <pre>
+        사전적의미 : 배치
+        기술적 의미 : 구성 요소를 제한된 공간에 배열(배치)하는 것을 의미
+    </pre>
+
+    <h2>화면 배치 방법( display: block | inline | inline-block )</h2>
+    <pre>
+        display 속성 : 요소가 화면에 어떻게 보여질지 지정하는 속성
+
+        block : 화면을 수직 분할 (한 줄을 모두 차지)
+        inline : 화면을 수평 분할 (한 줄에 여러 inline 요소가 배치됨 == 글자를 생각하면)
+        -> width / height 지정 X
+
+        inline-block : inline의 수평 분할 특성 + block의 크기 지정 가능
+
+        none : 화면에 표시되지 않으나 요소는 존재하고 있는 상태
+    </pre>
+
+    <hr>
+
+    <h3>block 형식 요소인 div를 inline으로 변경</h3>
+    <div class="block area1 inline">1번 영역</div>
+    <div class="block area2 inline">2번 영역</div>
+    <div class="block area2 inline">3번 영역</div>
+    <div class="block area4 inline">4번 영역</div>
+    <div class="block area5 inline">5번 영역</div>
+    <!-- class는 띄어쓰기를 통해 여러 개 작성이 가능하다 -->
+    <!-- class가 여러개 작성되어 css 속성이 겹치는 경우
+        마지막에 작성된 class의 css속성이 적용된다. -->
+
+    <h3>inline 형식 요소인 span을 block으로 변경</h3>
+    <span class="area1 block">1번 영역</span>
+    <span class="area2 block">2번 영역</span>
+    <span class="area3 block">3번 영역</span>
+    <span class="area4 block">4번 영역</span>
+    <span class="area5 block">5번 영역</span>
+
+    <h3>div를 inline-block으로 변경</h3>
+    <div class="block inline-block area1">1번 영역</div>
+    <div class="block inline-block area2">2번 영역</div>
+    <div class="block inline-block area3">3번 영역</div>
+    <div class="block inline-block area4">4번 영역</div>
+    <div class="block inline-block area5">5번 영역</div>
+
+
+    <hr>
+    <hr>
+
+    <h2>화면(영역) 분할</h2>
+
+    <div id="d1">
+        <div id="d1-1"></div>
+        <div id="d1-2"></div>
+    </div>
+
+
+    <div id="d2">
+        <div id="d2-1"></div>
+        <div id="d2-2"></div>
+    </div>
+    <pre>
+        영역을 좌우 분할하기 위하여 inline-block으로 변경하는 경우 문제가 있음!
+        -> inline-block 요소는 다른 요소와의 간격이 지정되어 있어서
+           살짝 벌어져 있는 형태를 띄게 된다.
+    </pre>
+
+
+</body>
+</html>

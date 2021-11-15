@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQeruy 메소드 2</title>
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #div1{ border: 2px solid red; }
+        #div2{ border: 2px dotted blue; }
+
+        .item{
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+
+            text-align: center;
+            line-height: 98px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+
+            display: inline-block;
+        }
+
+        .highlight-0{ background-color: red; }
+        .highlight-1{ background-color: orange; }
+        .highlight-2{ background-color: yellow; }
+        .highlight-3{ background-color: green; }
+        .highlight-4{ background-color: blue; }
+
+
+    </style>
+</head>
+<body>
+    
+    <h1>remove(), empty(), detach()</h1>
+    <pre>
+        remove() : DOM 요소 잘라내기 // 화면에서 제거하면서 해당 요소를 반환
+                                     // -> 요소만 잘라낼 뿐 이벤트는 유지되지 않는다
+
+        detach() : DOM 요소 떼어내기 // 화면에서 제거하면서 해당 요소를 반환
+                                     // -> 요소 뿐만 아니라 이벤트도 유지된다
+        (detach : 떼어 --- attach : 붙이다)
+
+        empty() : 자식 요소를 제거 // innerHTML = "", html("") 대체
+    </pre>
+
+    <button id="remove">remove()</button>
+    <button id="detach">detach()</button>
+    <button id="empty">empty()</button>
+    <button onclick="loaction.reload();">새로고침</button>
+    
+    <div id="div1" class="box">
+        <div id="test" class="item">
+            <span>안녕</span>
+        </div>
+    </div>
+
+    <div id="div2" class="box"></div>
+
+
+    <hr>
+
+    <h1>clone([true | false])</h1>
+    <pre>
+        요소 자체를 복제
+        매개변수가 true인 경우 : 이벤트도 복제 O
+        매개변수가 false인 경우 : 이벤트도 복제 X (default)
+    </pre>
+    
+    <button id="clone">복제</button>
+    <div id="div3">
+        <div class="item test3">
+            <span>안녕</span>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <h1>each() 메소드</h1>
+    <pre>
+        jQuery 방식의 향상된 for문
+        (향상된 for문 == for each문)
+
+        1. 배열 또는 다수의 요소를 순차 접근 하는 방식
+        $.each( object, function([index, item]){})
+            - object : 배열(자료형이 object)
+                       다수의 요소(HTML DOM 객체)
+
+            - function(){} : 반복 수행할 코드
+
+            - 매개변수 index : 현재 접근중인 index 표시
+            - 매개변수 item : 현재 접근중인 요소
+
+            - function(){} 내부 this : 현재 접근중인 요소
+        
+        
+
+        2. 다수의 요소를 순차 접근 하는 방식
+        $("선택자").each( function( [index, item] ){} );
+    </pre>
+
+    <ul>
+        <li>item-0</li>
+        <li>item-1</li>
+        <li>item-2</li>
+        <li>item-3</li>
+        <li>item-4</li>
+    </ul>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/jQuery메소드2.js"></script>
+</body>
+</html>

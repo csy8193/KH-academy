@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQeury 메소드 1</title>
+    
+    <style>
+        div{
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+
+        #wrapper{
+            width: 300px;
+            height: 800px;
+        }
+
+        #base{
+            height: 300px;
+            overflow: auto;
+        }
+
+        .box{
+            width: 30px;
+            height: 30px;
+            background-color: lightpink;
+            text-align: center;
+            line-height: 28px;
+            display: inline-block;
+        }
+
+        .btn{
+            background-color: skyblue;
+        }
+
+        .before{
+            height: 15px;
+            background-color: peachpuff;
+        }
+    </style>
+</head>
+<body>
+    <h1>요소에 내용 또는 값 얻어오기/세팅하기</h1>
+    <pre>
+        1) 요소에 작성된 내용만 얻어오기/세팅하기
+        [JS] : innerText                -> get
+               innerText = "내용"       -> set
+
+        [jQuery] : .text();             -> get
+                   .text(["내용"]);     -> set
+
+        2) 요소에 작성된 HTML코드 자체를 얻어오기/세팅하기
+        [JS] : innerHTML                -> get
+               innerHTML = "HTML코드"   -> set
+
+        [jQuery] : .html();             -> get
+                   .html("HTML코드");   -> set
+
+        3) input 태그의 값 얻어오기/세팅하기
+        [JS] : value                    -> get
+               value = "값"             -> set
+        
+        [jQuery] : val();               -> get
+                   val("값");           -> set
+    </pre>
+
+
+    <div id="area">
+        <button>테스트 버튼</button>
+    </div>
+
+    <button id="btn1">확인</button>
+
+    <hr>
+
+    <h1>jQuery로 요소 생성 및 추가하기</h1>
+    <pre>
+        p 태그요소 생성하기
+        [JS]        : document.createElement("p");
+        [jQuery]    : $("&lt;p&gt;");
+        
+        
+        요소에 속성 추가/제거하기
+        [JS]        : 요소.setAttribute("속성명", "속성값");    // 추가
+                      요소.removeAttribute("속성명");           // 제거
+
+        [jQuery]    : 요소.attr("속성명", "속성값");            // 추가
+                      요소.attr("속성명");                      // 속성값 얻어오기
+                      요소.removeAttr("속성명");                // 제거
+
+                      요소.prop("속성명", "속성값");            // 추가
+                      요소.prop("속성명");                      // true / false
+                      요소.removeProp("속성명");                // 제거
+
+        * Attribute -> 속성명 = "속성값"
+        * Property -> 속성명
+
+        prop("속성명") 에서 "속성명"은 checked, selected, disabled, enabled 등과 같이
+        속성명만 작성되어 있기 때문에 있다(true) / 없다(false)로 나타낸다
+        -> 속성명만 작성되는 속성들 이외에는 속성값을 반환한다
+
+
+        HTML문서에 요소 삽입
+        [JS]        : 부모.append(요소 | 노드, ...);    // 부모의 마지막 자식 요소로 삽입
+                      부모.appendChild(노드);           // 부모의 마지막 자식 요소로 삽입
+
+                      부모.prepend(요소 | 노드, ...);   // 부모의 첫번째 자식 요소로 삽입
+                      부모.prepend(노드);               // 부모의 첫번째 자식 요소로 삽입
+
+        [jQuery]    : $(부모).append(자식)              // 부모의 마지막 자식 요소로 삽입
+                      $(자식).appendTo(부모);           // 부모의 마지막 자식 요소로 삽입
+
+                      $(부모).prepend(자식)             // 첫 번째 자식으로 삽입
+                      $(자식).prependTo(부모);          // 첫 번째 자식으로 삽입
+
+                      $(A).after(B);                    // A요소 뒤에 B요소 삽입(형제)
+                      $(B).insertAfter(A);              // A요소 뒤에 B요소 삽입(형제)
+
+                      $(A).before(B);                   // A요소 앞에 B요소 삽입(형제)
+                      $(B).insertBefore(A);             // A요소 앞에 B요소 삽입(형제)
+    </pre>
+
+
+    <input type="checkbox" id="test" class="cls">
+
+
+    <hr>
+
+
+    <button id="add1">박스 추가</button> <!-- #base 마지막 자식 -->
+    <button id="add2">버튼 추가</button> <!-- #base 첫번째 자식 -->
+
+    <button id="add3">checkbox 추가</button> <!-- #base 마지막 자식 -->
+    <button id="add4">이전 형제 추가</button> <!-- #base 이전 형제 -->
+    <button id="add5">다음 형제 추가</button> <!-- #base 다음 형제 -->
+
+
+    <div id="wrapper">
+        <div id="base"></div>
+    </div>
+
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/08_jQuery메소드1.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>

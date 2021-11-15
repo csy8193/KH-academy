@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>순회(탐색) 메소드3</title>
+    
+    <style>
+        .wrap, .wrap * {
+            border: 1px solid lightgray;
+            display: block;
+            padding: 5px;
+            margin: 15px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sideways(옆으로, 옆에) 탐색 메소드</h1>
+
+    <pre>
+        $("선택자").siblings([매개변수]);
+            - 선택된 요소의 형제(같은 레벨 위치의 요소)
+            - 매개변수가 있으면 선택된 요소의 모든 형제 중 배개변수와 일치하는 요소만 반환
+
+        $("선택자").next();
+            - 선택된 요소의 다음 형제 요소 (1개)
+
+        $("선택자").nextAll();
+            - 선택된 요소의 다음 모든 형제 요소 반환
+
+        $("선택자").nextUntil(매개변수);
+            - 선택된 요소의 다음 형제부터 매개변수 요소 전까지 반환
+
+        $("선택자").prev();
+            - 선택된 요소의 이전 형제 요소 (1개)
+
+        $("선택자").prevAll();
+            - 선택된 요소의 이전 모든 형제 요소 반환
+
+        $("선택자").prevUntil(매개변수);
+            - 선택된 요소의 이전 형제부터 매개변수 요소 전까지 반환
+
+        .is(매개변수)
+            - 지정된 범위 내에 매개변수와 일치하는 요소가 있는지 확인하는 메소드
+            - 있으면 true, 없으면 false 반환 (존재 확인용 메소드)
+    </pre>
+
+    <div class="wrap">div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+     </div> 
+
+
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+     <script>
+         $(document).ready(function(){
+            const style1 = {border : "2px solid red",color : "red"};
+            const style2 = {border : "2px solid orange",color : "orange"};
+            const style3 = {border : "2px solid yellow",color : "yellow"};
+            const style4 = {border : "2px solid green",color : "green"};
+            const style5 = {border : "2px solid blue",color : "blue"};
+
+            // h2 태그의 모든 형제요소의 스타일을 style1로 변경
+            $("h2").siblings().css(style1);
+
+
+            // h2 태그의 형제 요소 중 p 태그의 스타일을 style2로 변경
+            // -> sibling(매개변수) 사용
+            $("h2").siblings("p").css(style2);
+
+            
+            // span태그 다음 요소의 스타일을 style3으로 변경
+            $("span").next().css(style3);
+
+            
+            // h2태그의 다음 모든 형제의 스타일을 style4로 변경
+            $("h2").nextAll().css(style4);
+
+            
+            // span 태그의 다음 모든 형제 중 p태그 이전 까지 형제 요소의 글자크기를 30px로 변경
+            $("span").nextUntil("p").css("fontSize", "30px");
+
+
+            // h2태그 이전 모든 형제 중 p태그가 있는지 확인
+            console.log( $("h2").nextAll().is("p") ); // true
+
+            // h2태그 이전 모든 형제 중 pre태그가 있는지 확인
+            console.log( $("h2").nextAll().is("pre") ); // false
+         });
+     </script>
+</body>
+</html>

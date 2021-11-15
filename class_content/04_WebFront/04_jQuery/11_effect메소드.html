@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>effect 메소드</title>
+
+    <style>
+        .area{
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        .area img{
+            width: 100%;
+            height: 100%;
+        }
+        
+        .title{
+            width: 300px;
+            height: 30px;
+            border: 2px solid blue;
+            background-color: lightblue;
+
+            text-align: center;
+            line-height: 28px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .content{
+            width: 300px;
+            height: 225px;
+            border: 1px solid black;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>시각적 효과를 위한 Effect 메소드</h1>
+    <pre>
+        요소에 애니메이션 효과를 만들기 위한 메소드 집합
+
+        1. show() / hide()
+        2. fadeIn() / fadeOut()
+        3. slideDown() / slideUp()
+
+        * effect 메소드 작성 방법
+        1. $(‘선택자’).메소드명();
+        2. $(‘선택자’).메소드명(speed);
+        3. $(‘선택자’).메소드명(speed, easing, callback);
+        speed : 실행속도(밀리세컨드초) / 숫자 or slow, fast
+        easing : 변경되는 지점별 속도 / linear, swing 가능
+        callback : 메소드 실행 후 실행할 함수
+
+    </pre>
+
+
+    <hr>
+
+    <h1>1. show() / hide()</h1>
+    <pre>
+        show() : 요소를 점점 커지게 하면서 화면에 보여짐
+        hide() : 요소를 점점 작아지게 하면서 화면에서 숨김
+    </pre>
+
+    <button id="show-btn">show()</button>
+    <button id="hide-btn">hide()</button>
+
+    <div class="area">
+        <img id="img1" src="images/cat.gif">
+    </div>
+
+    <hr>
+    
+    <h1>2. fadeIn() / fadeOut()</h1>
+    <pre>
+        fadeIn() : 점점 불투명(선명)해 지면서 나타남
+        fadeOut() : 점점 투명해 지면서 사라짐
+    </pre>
+    
+    <button id="fadeIn-btn">fadeIn()</button>
+    <button id="fadeOut-btn">fadeOut()</button>
+
+    <div class="area">
+        <img id="img2" src="images/cute1.gif">
+    </div>
+
+
+    <hr>
+
+    <h1>3. slideDown() / slideUp()</h1>
+    <pre>
+        slideDown() : 아래로 내려가면서 보여짐 (펴짐)
+        slideUp() : 위로 올라가면서 없어짐 (접힘)
+    </pre>
+
+    <button id="slideDown-btn">slideDown()</button>
+    <button id="slideUp-btn">slideUp()</button>
+
+    <div class="area">
+        <img id="img3" src="images/sibadog.gif">
+    </div>
+
+
+    <h1>토글(toggle) 버튼 동작 만들기</h1>
+    <pre>
+        토글(toggle) 이란? 
+        - 하나의 버튼에 두가지 상태를 지정할 수 있는 버튼
+            ex) 전등 스위치
+        
+        toggle() 메소드
+        - 메소드 수행 시 요소의 display 상태에 따라서
+          자동으로 show(), hide()를 수행하는 메소드
+    </pre>
+
+    
+    <button id="toggle">토글 스위치</button>
+
+    <button id="toggle2">toggle()</button>
+
+    <div class="area">
+        <img id="img4" src="images/pikachu.gif">
+    </div>
+
+
+    <hr>
+    <h1>슬라이드를 이용한 아코디언 메뉴 만들기</h1>
+    
+    <div class="title">첫 번째 메뉴</div>
+    <img class="content" src="images/cat.gif">
+
+    <div class="title">두 번째 메뉴</div>
+    <img class="content" src="images/cute1.gif">
+
+    <div class="title">세 번째 메뉴</div>
+    <img class="content" src="images/pikachu.gif">
+
+    <div class="title">네 번째 메뉴</div>
+    <img class="content" src="images/sibadog.gif">
+
+    
+    
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/11_effect메소드.js"></script>
+</body>
+</html>

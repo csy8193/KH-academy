@@ -1,0 +1,44 @@
+div{
+    border: 1px solid black;
+    box-sizing: border-box;
+    /* width, height 지정 시 content + padding + border의 크기로 지정될 수 있도록
+       각 영역의 비율을 자동으로 조절 */
+}
+
+.container{
+    width: 1000px;
+    height: 800px;
+
+    /* 다른 요소와의 간격 */
+    margin: auto;
+}
+
+/* 행을 구분하는 영역 */
+.header{
+    width: 100%;
+    height: 20%;
+}
+
+.content{
+    width: 100%;
+    height: 60%;
+}
+
+/* content 영역 좌우 2분할 */
+.content > div:first-child{
+    height: 100%;
+    width: 15%;
+    float: left;
+}
+
+.content > div:last-child{
+    height: 100%;
+    width: 85%;
+    float: left;
+
+}
+
+.footer{
+    width: 100%;
+    height: 20%;
+}

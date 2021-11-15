@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장 객체</title>
+    <style>
+        #clock{
+            width: 300px;
+            height: 70px;
+            border: 1px solid black;
+
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #test{
+            font-size: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>날짜/시간 관련 객체 : Date</h2>
+    <button id="btn1">Date 확인</button>
+
+    <hr>
+    <h1>window 객체</h1>
+    <pre>
+        - 브라우저 창 자체를 나타내는 객체
+
+        - window 객체는 자바스크립트의 최상위 객체이며 DOM, BOM으로 분류된다
+
+        DOM(Document Object Model) : Document
+        BOM(Browser Object Model) : location, history, screen, navigator
+        
+        * window 객체는 창 자체를 나타내고 있으므로 어디서든 접근이 가능하다
+        그래서 window라는 객체 호출부를 생략할 수 있다
+        ex) window.alert() == alert()
+    </pre>
+
+    <hr>
+    <h2>window.setTimeout( 함수, 지연시간(ms) )</h2>
+
+    <pre>
+        일정 시간 후 지정된 함수가 한번만 수행된다
+    </pre>
+
+    <button id="btn2">setTimeout 확인</button>
+
+    <button id="btn3">3초 후 학원 홈페이지로 이동</button>
+
+    <hr>
+    <h2>window.setInterval(함수, 지연시간)</h2>
+
+    <pre>
+        지정된 지연 시간 마다 함수가 반복 수행
+    </pre>
+
+    <button id="btn4">setInterval 확인</button>
+    <div id="div1">
+    </div>
+
+    <pre>
+        setInterval은 중복돼서 사용될 수 있기 때문에
+        여러 번 호출되지 못하게 하는 처리가 필요하다
+        (무분별하게 호출되면 브라우저 메모리를 많이 소비한다)
+    </pre>
+    <button id="btn5">setInterval 문제 해결 방법1</button>
+    <button id="btn6">setInterval 문제 해결 방법2</button>
+
+    <div id="clock"></div>
+
+    <hr>
+
+    <h2>clearInterval( setInterval이 저장된 변수 )</h2>
+
+    <pre>setInterval을 멈추게 함</pre>
+
+    <div id="test">0</div>
+    <button id="test-btn1">시작</button>
+    <button id="test-btn2">종료</button>
+
+
+    <hr>
+
+    <h2>location : 브라우저의 주소창과 관련된 객체 (BOM 객체)</h2>
+
+    <a href="https://iei.or.kr/main/main.kh">KH 정보교육원</a>
+
+    <button onclick="location.href = 'https://iei.or.kr/main/main.kh';">kh정보교육원</button>
+    <button onclick="location = 'https://iei.or.kr/main/main.kh';">kh정보교육원</button>
+
+    <hr>
+    <!-- location.href를 getter로 사용시 == 현재 주소 얻어옴 -->
+    <button onclick="location.href = location.href">새로고침1</button>
+    <button onclick="location = location">새로고침2</button>
+
+    <!-- location.reload() : 현재 위치에 고정된 상태에서 새로고침 -->
+    <button onclick="location.reload();">새로고침3</button>
+
+    <hr>
+    <button onclick="location.href = 'https://iei.or.kr/main/main.kh';">kh정보교육원1</button>
+    <button onclick="location.replace('https://iei.or.kr/main/main.kh');">kh정보교육원2</button>
+
+    <script src="js/11_내장객체.js"></script>
+</body>
+</html>

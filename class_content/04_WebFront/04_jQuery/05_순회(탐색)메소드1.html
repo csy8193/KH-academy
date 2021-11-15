@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+        .wrap * { /* wrap 클래스의 모든 후손 */
+            border: 1px solid lightgray;
+            display: block;
+            padding: 5px;
+            margin: 15px;
+            color: gray;
+        }
+
+        .type { width: 500px; }
+    </style>
+</head>
+<body>
+    <h1>Ancestors (조상) 탐색 메소드</h1>
+    <pre>
+        - 선택된 요소의 상위 요소를 찾기위한 메소드
+
+        $("선택자").parent();
+            - 선택된 요소의 바로 위 상위 요소 (현재 요소를 감싸고 있는 요소)
+
+        $("선택자").parents([매개변수]);
+            - 선택된 요소의 모든 상위 요소를 반환
+
+            - 매개변수 == CSS선택자
+            -> 선택된 요소의 모든 상위 요소 중 매개변수와 일치하는 요소만 반환
+
+        $("선택자").parentsUntil(매개변수);
+            - 선택된 요소부터 매개변수 요소까지 범위의 부모 요소를 반환
+    </pre>
+
+
+
+
+
+    <div class="wrap">
+        <div class="type">div (great-grand parent)
+            <ul>ul (grand parent)
+                <li>li (direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="type">div (grand parent)
+            <p>p (direct parent)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+
+
+
+    <!-- jQuery 라이브러리 추가 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        $(function(){
+
+            // span 태그의 부모 요소의 테두리, 글자색을 red로 변경
+            $("span").parent().css("borderColor", "red").css("color", "red");
+
+            // span 태그 부모의 부모 요소 테두리 색을 "black"으로 변경
+            $("span").parent().parent().css("borderColor", "black");
+
+            // li 태그의 모든 상위 요소의 글자색을 "blue"로 변경
+            $("li").parents().css("color", "blue");
+
+            // li 태그의 상위 요소 중 div만을 선택하여
+            // 테두리를 2px 점선 magenta로 변경
+            $("li").parents("div").css("border", "2px dotted magenta");
+
+
+            // span 태그 부터 상위 요소 중 div 태그를 만나기 전 까지
+            // 요소를 선택하여 배경색을 "skyblue"로 변경
+            $("span").parentsUntil("div").css("backgroundColor", "skyblue");
+        });
+
+
+    </script>
+</body>
+</html>
