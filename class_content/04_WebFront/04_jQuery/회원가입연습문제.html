@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 연습문제</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        #reg-form{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <fieldset id="reg-form">
+            <legend>회원 가입 양식</legend>
+            <form action="main.html" method="post">
+                <table>
+                    <tr>
+                        <td>아이디</td>
+                        <td><input type="text" id="input-id" required></td>
+                        <td><button>중복확인</button></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td><input type="password" id="input-pw" required></td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호확인</td>
+                        <td><input type="password" id="check-pw" required></td>
+                    </tr>
+                    <tr>
+                        <td>이름</td>
+                        <td><input type="text" id="input-name" required></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>성별</td>
+                        <td>
+                            <label for="input-male">남</label><input type="radio" id="input-male" name="gender" value="m" required>
+                            <label for="input-female">여</label><input type="radio" id="input-female" name="gender" value="f" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>전화번호</td>
+                        <td><input type="text" id="input-tel" placeholder='"-" 포함' required></td>
+                    </tr>
+                    <tr>
+                        <td>이메일</td>
+                        <td><input type="email" id="input-email"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="display: flex; justify-content: end;">
+                            <button type="reset">초기화</button>
+                            <button id="sign-up">회원가입</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </fieldset>
+    </div>
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/회원가입연습문제.js"></script>
+</body>
+</html>
