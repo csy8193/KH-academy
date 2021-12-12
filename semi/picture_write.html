@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>picture_write</title>
+    <link rel="stylesheet" href="css/picture_write.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div id="header">
+                <ol class="header-category">
+                    <li><span>반려동물</span></li>
+                    <li><span>유기동물</span></li>
+                    <li><span>동물병원</span></li>
+                    <li><span>산책</span></li>
+                    <li><span>공지사항</span></li>
+                    <li><span>마이페이지</span></li>
+                </ol>
+                <div class="search-btn">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </header>
+    
+        <main>
+            <div id="main">
+                <h1 class="board">게시판 이름</h1>
+                <div class="image-reg">
+                    <h4 class="title">이미지 등록<span> *</span></h4>
+                    <button id="image-upload">이미지 업로드</button>
+                    <ul class="image-preview">
+                        <li>
+                            <img src="img/1.jpg">
+                            <div>
+                                <i class="fas fa-trash-alt"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/2.jpg">
+                            <div>
+                                <i class="fas fa-trash-alt"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <h4 class="title">글 작성<span> *</span></h4>
+                <textarea id="write-content" placeholder="내용을 입력해주세요"></textarea>
+                <div class="btns">
+                    <button id="reg-btn">등록하기</button>
+                    <button id="cancel-btn">취소하기</button>
+                </div>
+            </div>
+        </main>
+    
+        <footer>
+            <div id="footer">
+                <div class="footer-text">
+                    <p>
+                        <strong>상호</strong> : 투개더 | <strong>대표자명</strong> : XXX | <strong>대표전화</strong> : 000-1234-1234
+                    </p>
+                    <p>
+                        <strong>사업자등록번호</strong> : 000-00-00000 | <strong>이메일</strong> : together@kh.co.kr
+                    </p>
+                    <p>
+                        <strong>주소</strong> : 서울특별시 중구 남대문로 120 대일빌딩
+                    </p>
+                    <p>
+                        Copyright©투개더
+                    </p>
+                </div>
+                <div class="footer-img">
+                    <a href="#"><i class="fas fa-dog"></i></a>
+                    <a href="#"><i class="fas fa-cat"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .then( editor => {
+                        console.log( editor );
+                } )
+                .catch( error => {
+                        console.error( error );
+                } );
+    </script>
+</body>
+</html>
