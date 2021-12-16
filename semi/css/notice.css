@@ -125,7 +125,7 @@ main{
 
 .notice-table tr{
     display: flex;
-    min-height: 60px;
+    min-height: 70px;
 }
 
 .notice-table tr:nth-of-type(n){
@@ -142,23 +142,27 @@ main{
     padding-left: 10px;
 }
 
-.notice-table td:nth-of-type(1), .notice-table th:nth-of-type(1){
-    width: 10%;
+.table-head1, .table-data1{
+    width: 15%;
 }
-.notice-table td:nth-of-type(2), .notice-table th:nth-of-type(2){
-    width: 20%;
-}
-.notice-table td:nth-of-type(3), .notice-table th:nth-of-type(3){
-    width: 60%;
+.table-head2, .table-data2{
+    width: 65%;
     font-weight: bold;
 }
-.notice-table td:nth-of-type(4), .notice-table th:nth-of-type(4){
-    width: 10%;
+.table-head3, .table-data3{
+    width: 20%;
 }
 
-.notice-table td:not(:nth-of-type(3)){
+.table-data2{
+    margin-left: 50px;
+}
+
+.notice-table td:not(:nth-of-type(2)){
     font-size: 14px;
     color: #A9AFBE;
+}
+.table-hd:not(.table-data2){
+    justify-content: center;
 }
 
 .page-number{
