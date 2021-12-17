@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 *{
     box-sizing: border-box;
@@ -45,8 +45,6 @@ header{
     justify-content: center;
     align-items: center;
     width: 10%;
-    font-weight: 900;
-    font-size: 18px;
 }
 
 .header-category > li:hover > span{
@@ -147,7 +145,6 @@ main{
 }
 .table-head2, .table-data2{
     width: 65%;
-    font-weight: bold;
 }
 .table-head3, .table-data3{
     width: 20%;

@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
 }
 
 ol,ul,li, a{
@@ -45,7 +46,6 @@ header{
     justify-content: center;
     align-items: center;
     width: 10%;
-    font-weight: bold;
 }
 
 .header-category > li:hover > span{
@@ -130,11 +130,6 @@ main{
 
 .search-board > p{
     color: #989696;
-    font-weight: 100;
-}
-
-.search-board > p{
-
 }
 
 .board-user-info{
