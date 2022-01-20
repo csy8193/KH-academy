@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 목록(강사)</title>
+    <link rel="stylesheet" href="teacherClassList.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <div class="container">
+        <main>
+            <div class="left">
+                <div class="box">
+                    <img src="images/KakaoTalk_20220112_153307445.png">
+                </div>
+                <div class="name">홍길동</div>
+                <div class="introduce">안녕하세요. 만나서 반갑습니다.</div>
+                
+                <div class="list">
+                    <div>학생 프로필</div>
+                    <div class="selected">클래스 목록</div>
+                </div>
+            </div>
+
+            <div class="right">
+                <p><span>000</span>님의 클래스 목록</p>
+
+                <div class="table">
+                    <div class="row">
+                        <div class="column">번호</div>
+                        <div class="column">클래스명</div>
+                        <div class="column">클래스 상태</div>
+                        <div class="column">수강 기간</div>
+                        <div class="column">환불 여부</div>
+                        <div class="column">환불 금액</div>
+                        <div class="column"></div>
+                    </div>
+                    <div class="row">
+                        <div class="column">1</div>
+                        <div class="column">클래스명1</div>
+                        <div class="column">수강 예정</div>
+                        <div class="column">22/03/01 ~ 22/04/01</div>
+                        <div class="column">환불 신청</div>
+                        <div class="column">20000</div>
+                        <div class="column slide">
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="invisible">
+                        <div class="invisible-btn">
+                            <button>1:1 채팅</button>
+                            <button>신고하기</button>
+                            <button>환불하기</button>
+                            <button>후기작성?</button>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="column">1</div>
+                        <div class="column">클래스명1</div>
+                        <div class="column">수강 예정</div>
+                        <div class="column">22/03/01 ~ 22/04/01</div>
+                        <div class="column">-</div>
+                        <div class="column">-</div>
+                        <div class="column slide">
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="invisible">
+                        <div class="invisible-btn">
+                            <button>1:1 채팅</button>
+                            <button>신고하기</button>
+                            <button>환불하기</button>
+                            <button>후기작성?</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </main>
+    
+
+    </div>
+
+        <!-- <div class="right"> 
+            <div class="modal_body">Modal</div>
+            <div class="modal_btn"><button onclick="cancle(this)">취소</button></div>
+        </div> -->
+
+
+
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script> 
+    // 모달 off 
+    const body = document.body;
+    body.style.overflow = 'auto';
+
+    const modal = document.querySelector('.modal'); 
+    // const btnOpenPopup = document.querySelector('.btn-open-popup'); 
+    // btnOpenPopup.addEventListener('click', () => { modal.style.display = 'block'; });
+
+    function modalDelete(el){
+        modal.style.display = 'block';
+        // 모달 on 
+        body.style.overflow = 'hidden';
+    }
+    
+    function cancle(el) {
+        modal.style.display = 'none';
+    }
+
+    $(".slide").on("click", function(){
+        if($(this).parent().next().css("display") == "none"){
+            $(".invisible").slideUp(100);
+            $(".slide").html('<i class="fas fa-angle-down"></i>');
+            $(this).parent().next().slideDown(100);
+            $(this).html('<i class="fas fa-angle-up"></i>');
+            
+        }else{
+            $(this).parent().next().slideUp(100);
+            $(this).html('<i class="fas fa-angle-down"></i>');
+
+        }
+    });
+    
+</script>
+
+</html>
