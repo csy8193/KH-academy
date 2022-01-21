@@ -136,10 +136,14 @@ main{
     text-align: center;
     padding: 15px 0;
 }
+.row:not(:nth-of-type(1)) > .column:nth-of-type(4){
+    color: #FFDF3E;
+}
 
-.column:nth-of-type(2){
+.column:nth-of-type(5){
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .row:nth-of-type(1){
     border-bottom: 2px solid #ddd;
@@ -237,6 +241,12 @@ main{
     outline-color: #FFDF3E;
 }
 
+.score{
+    margin-bottom: 10px;
+}
+.score > i{
+    color: #FFDF3E;
+}
 
 .modal-btn{
     display: flex;
