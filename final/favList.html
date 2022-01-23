@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>찜목록</title>
+    <link rel="stylesheet" href="css/favList.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container">
+        <main>
+            <div class="left">
+                <div class="box">
+                    <img src="images/KakaoTalk_20220112_153307445.png">
+                </div>
+                <div class="name">홍길동</div>
+                <div class="introduce">안녕하세요. 만나서 반갑습니다.</div>
+
+                <div class="list">
+                    <div>학생 프로필</div>
+                    <div class="selected">클래스 목록</div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="title">
+                    <p><span>000</span>님의 찜목록</p>
+                </div>
+
+                <div class="list-wrap">
+                    <div class="fav-wrap">
+                        <div class="img-wrap">
+                            <img src="images/KakaoTalk_20220112_153307445.png">
+                            <div>
+                                <span>인천 부평구</span>
+                                <i class="fas fa-heart" onclick=""></i>
+                            </div>
+                        </div>
+                        <div class="category-teacher">
+                            <span>카테고리</span>
+                            <span>길동홍</span>
+                        </div>
+                        <div class="class-name">
+                            <span>클래스1</span>
+                        </div>
+                        <div class="score-price">
+                            <span>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span>17,900원</span>
+                        </div>
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+                    <div class="fav-wrap">
+
+                    </div>
+
+                </div>
+                <div class="page-number">
+                    <ul class="page-ul">
+                        <li>
+                            <a href="#"><i class="fas fa-angle-double-left"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-angle-left"></i></a>
+                        </li>
+                        
+                        <li style="border: 1px solid #FFDF3E; border-radius: 50%; background-color: #FFDF3E;">
+                            <a style="color: white;">1</a>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#"><i class="fas fa-angle-right"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-angle-double-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+
+    // 모달 열기
+    $(".report-modal-btn").click(function () {
+        $("#report-modal").fadeIn(100);
+        $("#report-modal").css("display", "flex");
+    });
+
+    // 모달 닫기 버튼
+    $(".modal-close-btn").click(function () {
+        $("#report-modal").fadeOut(100);
+    });
+
+    // 모달 밖에 클릭시 모달 닫기
+    $("#report-modal").click(function (e) {
+        if($(e.target).hasClass('modal-layer')) {
+            $("#report-modal").fadeOut(100);
+        }
+
+    });
+
+    // 슬라이드
+    $(".slide").on("click", function () {
+        if ($(this).parent().next().css("display") == "none") {
+            $(".invisible").slideUp(100);
+            $(".slide").html('<i class="fas fa-angle-down"></i>');
+            $(this).parent().next().slideDown(100);
+            $(this).html('<i class="fas fa-angle-up"></i>');
+
+        } else {
+            $(this).parent().next().slideUp(100);
+            $(this).html('<i class="fas fa-angle-down"></i>');
+
+        }
+    });
+
+</script>
+
+</html>
