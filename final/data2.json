@@ -1,0 +1,12 @@
+[
+    {"id" : "1", "name" : "학생1", "name2":"클래스명1", "gender" : "남", "age" : "20", "report" : 1},
+    {"id" : "2", "name" : "학생2", "name2":"클래스명2", "gender" : "남", "age" : "21", "report" : 1},
+    {"id" : "3", "name" : "학생3", "name2":"클래스명3", "gender" : "여", "age" : "22", "report" : 1},
+    {"id" : "4", "name" : "학생4", "name2":"클래스명4", "gender" : "여", "age" : "23", "report" : 1},
+    {"id" : "5", "name" : "학생5", "name2":"클래스명5", "gender" : "남", "age" : "24", "report" : 1},
+    {"id" : "6", "name" : "학생6", "name2":"클래스명6", "gender" : "여", "age" : "25", "report" : 1},
+    {"id" : "7", "name" : "학생7", "name2":"클래스명7", "gender" : "남", "age" : "26", "report" : 1},
+    {"id" : "8", "name" : "학생8", "name2":"클래스명8", "gender" : "여", "age" : "27", "report" : 1},
+    {"id" : "9", "name" : "학생9", "name2":"클래스명9", "gender" : "여", "age" : "28", "report" : 1},
+    {"id" : "10", "name" : "학생10", "name2":"클래스명10", "gender" : "남", "age" : "29", "report" : 1}
+]

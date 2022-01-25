@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/classList.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -55,6 +58,7 @@
                     <div class="invisible">
                         <div class="invisible-btn">
                             <button><i class="far fa-comment"></i> 채팅</button>
+                            <button class="review-modal-btn"><i class="fas fa-pen"></i> 후기</button>
                             <button class="report-modal-btn"><i class="fas fa-exclamation-triangle"></i> 신고</button>
                             <button><i class="fas fa-wallet"></i> 환불</button>
                         </div>
@@ -75,6 +79,7 @@
                     <div class="invisible">
                         <div class="invisible-btn">
                             <button><i class="far fa-comment"></i> 채팅</button>
+                            <button class="review-modal-btn"><i class="fas fa-pen"></i> 후기</button>
                             <button class="report-modal-btn"><i class="fas fa-exclamation-triangle"></i> 신고</button>
                             <button><i class="fas fa-wallet"></i> 환불</button>
                         </div>
@@ -93,6 +98,7 @@
                     <div class="invisible">
                         <div class="invisible-btn">
                             <button><i class="far fa-comment"></i> 채팅</button>
+                            <button class="review-modal-btn"><i class="fas fa-pen"></i> 후기</button>
                             <button class="report-modal-btn"><i class="fas fa-exclamation-triangle"></i> 신고</button>
                             <button><i class="fas fa-wallet"></i> 환불</button>
                         </div>
@@ -110,7 +116,7 @@
                             <a href="#"><i class="fas fa-angle-left"></i></a>
                         </li>
                         
-                        <li style="border: 1px solid #FFDF3E; border-radius: 50%; background-color: #FFDF3E;">
+                        <li style="border-radius: 50%; background-color: #FFDF3E;">
                             <a style="color: white;">1</a>
                         </li>
                         <li>
@@ -129,6 +135,8 @@
             </div>
         </main>
 
+
+        <!-- 신고하기 모달창 -->
         <div id="report-modal">
             <div class="modal-content">
                 <form action="#" method="post">
@@ -140,12 +148,39 @@
                         <p>'클래스명1'</p>
                     </div>
                     
-                    <textarea name="" class="modal-report" placeholder="신고사유를 입력해주세요."></textarea>
+                    <textarea name="" class="modal-textarea" placeholder="신고사유를 입력해주세요."></textarea>
 
                     <input type="hidden">
 
                     <div class="modal-btn">
                         <button>보내기</button>
+                        <button type="button" class="modal-close-btn">취소</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-layer"></div>
+        </div>
+
+
+        <!-- 후기 작성 모달창 -->
+        <div id="review-modal">
+            <div class="modal-content">
+                <form action="#" method="post">
+                    <div class="modal-title">
+                        <h2>후기 작성</h2>
+                    </div>
+    
+                    <div class="modal-classname">
+                        <p>'클래스명1' - 강사명</p>
+                    </div>
+                    
+                    <textarea name="" class="modal-textarea" placeholder="후기를 작성해주세요."></textarea>
+
+                    <input type="hidden">
+
+                    <div class="modal-btn">
+                        <button>작성완료</button>
                         <button type="button" class="modal-close-btn">취소</button>
                     </div>
                 </form>
@@ -168,6 +203,20 @@
 <script>
 
     // 모달 열기
+    $(".review-modal-btn").click(function () {
+        $("#review-modal").fadeIn(100);
+        $("#review-modal").css("display", "flex");
+    });
+
+    // 모달 밖에 클릭시 모달 닫기
+    $("#review-modal").click(function (e) {
+        if($(e.target).hasClass('modal-layer')) {
+            $("#review-modal").fadeOut(100);
+        }
+
+    });
+
+    // 모달 열기
     $(".report-modal-btn").click(function () {
         $("#report-modal").fadeIn(100);
         $("#report-modal").css("display", "flex");
@@ -176,6 +225,7 @@
     // 모달 닫기 버튼
     $(".modal-close-btn").click(function () {
         $("#report-modal").fadeOut(100);
+        $("#review-modal").fadeOut(100);
     });
 
     // 모달 밖에 클릭시 모달 닫기

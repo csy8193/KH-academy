@@ -26,52 +26,41 @@
         <thead>
             <tr>
                 <th>번호</th>
-                <th>이름</th>
-                <th>출석률</th>
-                <th>금액</th>
+                <th>신고자</th>
+                <th>피신고자</th>
+                <th>성별</th>
+                <th>나이</th>
+                <th>신고 횟수</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
         </tbody>
     </table>
-    <button id="test">정산하기</button>
 </body>
 
 <script>
     $(document).ready( function () {
         $('#table_id').DataTable({
-            ajax: {url: "data.json", dataSrc: ''},
+            ajax: {url: "data2.json", dataSrc: ''},
             columns: [
                 { data: "id"},
                 { data: "name"},
-                { data: "attend"},
-                { data: "price"}
+                { data: "name2"},
+                { data: "gender"},
+                { data: "age"},
+                { data: "report"}
             ],
-            buttons: ['정산하기']
-            /* columnDefs: [{
-                "targets": 4,
+            columnDefs: [{
+                "targets": 6,
                 "data": null,
                 "render": function(data, type, row){
                     console.log(data.id);
-                    if(data.id == 1){
-                        return '<button class="id'+data.id+'">내역확인</button><button class="id'+data.id+'">내역확인</button><button class="id'+data.id+'">내역확인</button>';
-                    }else{
-                        return '-';
-                    }
-                        },
+                        return '<button onclick="confirm('+data.id+')">내역확인</button>';
+                    },
                 "orderable": false
-                }], */
+                }],
         });
     } );
-    $("#test").on("click", function(){
-
-        const td = $("#table_id tr > td:nth-of-type(4)");
-        let sum = 0;
-
-        for(let i=0; i<td.length; i++){
-            sum += parseInt($(td[i]).text());
-        }
-        confirm("총 합계 : " + sum);
-    });
 </script>
 </html>

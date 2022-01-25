@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Modal</title>
+
+    <style>
+      .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal.show {
+        display: block;
+      }
+
+      .modal_body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 240px;
+        padding: 40px;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+        transform: translateX(-50%) translateY(-50%);
+      }
+
+      .modal select{
+        width: 150px;
+        height: 40px;
+      }
+
+      .modal button{
+        width: 120px;
+        height: 30px;
+        margin: 0 10px;
+        margin-top: 60px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="modal">
+      <div class="modal_body">
+        <h1>거절 사유</h1>
+        <div>
+          <select name="cancel-reason">
+            <option>설명 부족</option>
+            <option>부적절한내용</option>
+            <option>가격 부적합</option>
+          </select>
+        </div>
+        <div>
+          <button id="modal-cancel">취소</button><button id="modal-send">보내기</button>
+
+        </div>
+
+      </div>
+    </div>
+    <button class="btn-open-popup">거절</button>
+    
+
+    <br>
+    <div id="test"><img src="https://t1.daumcdn.net/cfile/tistory/99B836345F45E9C908"></div>
+
+    <script>
+      const body = document.querySelector('body');
+      const modal = document.querySelector('.modal');
+      const btnOpenPopup = document.querySelector('.btn-open-popup');
+
+      btnOpenPopup.addEventListener('click', () => {
+        modal.classList.toggle('show');
+
+        if (modal.classList.contains('show')) {
+          body.style.overflow = 'hidden';
+        }
+      });
+
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.classList.toggle('show');
+
+          if (!modal.classList.contains('show')) {
+            body.style.overflow = 'auto';
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
