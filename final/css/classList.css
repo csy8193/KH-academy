@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 
 body, html{
     margin: 0;
@@ -13,7 +18,7 @@ body *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard-Regular', sans-serif;
     /* border: 1px solid black; */
 }
 
@@ -24,14 +29,14 @@ ol,ul,li,a{
 }
 
 .container{
-    min-width: 1080px;
+    min-width: 1200px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 main{
-    width: 1080px;
+    width: 1200px;
     margin-top: 50px;
     display: flex;
 }
@@ -44,7 +49,7 @@ main{
     width: 260px;
     margin-right: 14px;
     background-color: white;
-    box-shadow: 0px 0px 3px 3px #ddd;
+    border: 2px solid #ededed;
 }
 
 .box {
@@ -93,9 +98,8 @@ main{
 /* 오른쪽 */
 .right{
     flex: 1 0 0;
-    border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0px 0px 3px 3px #ddd;
+    border: 2px solid #ededed;
     background-color: white;
 }
 
@@ -103,17 +107,20 @@ main{
 /* 제목 부분 */
 .title{
     display: flex;
+    padding: 30px 25px 20px 25px;
     border-bottom: 1px solid #ddd;
 }
 
 .title > p{
-    padding: 15px;
     color: #A16E50;
     font-weight: 500;
+    font-size: 21px;
+    font-weight: bolder;
 }
 
 .title > p > span{
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: bolder;
 }
 
 /* 테이블 부분 */
@@ -139,6 +146,11 @@ main{
 /* 테이블 첫번째 줄 */
 .row:nth-of-type(1){
     border-bottom: 2px solid #ddd;
+}
+
+.table-column{
+    font-size: 15px;
+    font-weight: 800;
 }
 
 /* 테이블에서 마지막 줄 */
@@ -197,13 +209,28 @@ main{
 
 /* 버튼 */
 .invisible-btn > button{
-    margin-left: 10px;
+    /* margin-left: 10px;
     padding: 3px;
     border-radius: 5px;
     background-color: #FFDF3E;
     border: 1px solid #ddd;
+    cursor: pointer; */
+    width: 56px;
+    height: 30px;
+    margin-left: 10px;
+    padding: 3px;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
     cursor: pointer;
+    border: 1px solid rgba(70, 70, 70, 0.788);
+    background: none;
 }
+.invisible-btn > button:hover{
+    border-color: #e4e5ed;
+    background-color: #FFDF3E;
+}
+
 
 /* 모달창 */
 #report-modal {

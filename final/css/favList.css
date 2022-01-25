@@ -42,7 +42,7 @@ main{
     position: sticky;
     top: 10px;
     border-radius: 10px;
-    height: 500px;
+    height: 750px;
     width: 260px;
     margin-right: 14px;
     background-color: white;
@@ -105,17 +105,20 @@ main{
 /* 제목 부분 */
 .title{
     display: flex;
+    padding: 30px 25px 20px 25px;
     border-bottom: 1px solid #ddd;
 }
 
 .title > p{
-    padding: 15px;
     color: #A16E50;
     font-weight: 500;
+    font-size: 21px;
+    font-weight: bolder;
 }
 
 .title > p > span{
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: bolder;
 }
 
 /* 찜목록 */
@@ -227,3 +230,214 @@ main{
 .page-ul > li > a{
     display: block;
 }
+
+
+
+
+
+
+.detail{
+    font-size: 20px;
+    font-weight: bold;
+}
+.location-class, .hot-class, .new-class{
+    width: 100%;
+    height: 500px;
+    margin-top: 100px;
+}
+
+.location-class{
+    margin-top: 70px;
+}
+
+.location-class-top, .hot-class-top, .new-class-top{
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+.location-class-bottom{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.location-class-bottom, .hot-class-bottom, .new-class-bottom{
+    margin-top: 20px;
+}
+
+.location-class a, .hot-class a, .new-class a{
+    display: inline-block;
+    height: 20px;
+    font-size: 17px;
+}
+
+.fi-rr-angle-small-right:before {
+    margin: 15px;
+}
+
+.location{
+    float: right;
+}
+
+.location p{
+    display: inline-block;
+}
+
+.class{
+    width: 252px;
+    height: 422px;
+    border: 1px solid gainsboro;
+    box-shadow: 3px 2px 5px 2px #0000001a;
+    border-radius: 5px;
+    position: relative;
+    margin: 5px 0px;
+}
+
+.class:nth-of-type(3n+2){
+    margin: 5px 14px;
+}
+
+.class > img{
+    width: 252px;
+    height: 252px;
+    position: relative;
+
+}
+
+.detail-info{
+    padding: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.category-name{
+    font-size: 12px;
+}
+
+.grade{
+    margin-top: 8px;
+}
+
+.grade > span{
+    margin-right: 10px;
+}
+
+.detail-info-bottom{
+    position: absolute;
+    width: 224px;
+    bottom: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+.teacher-name{
+    font-size: 15px;
+}
+.class-price{
+    font-size: 15px;
+    float: right;
+}
+
+/* 이미지 확대 */
+.class {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
+}
+.class:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+
+/* 찜하기 */
+.btn_like {
+    position: relative;
+    margin: 100px auto;
+    display: block;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e8e8e8;
+    border-radius: 44px;
+    font-family: notokr-bold,sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    background-color: #fff;
+    color: #DD5D54;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.03);
+    transition: border .2s ease-out,box-shadow .1s ease-out,background-color .4s ease-out;
+    cursor: pointer;
+
+    position: absolute;
+    top: 10px;
+    margin: 0;
+    right: 10px;
+  }
+  
+  .btn_like:hover {
+    border: 1px solid rgba(228,89,89,0.3);
+    background-color: rgba(228,89,89,0.02);
+    box-shadow: 0 2px 4px 0 rgba(228,89,89,0.2);
+  }
+  
+  .btn_unlike .img_emoti {
+      background-position: -30px -120px;
+  }
+  
+  .img_emoti {
+      display: inline-block;
+      overflow: hidden;
+      font-size: 0;
+      line-height: 0;
+      background: url(https://mk.kakaocdn.net/dn/emoticon/static/images/webstore/img_emoti.png?v=20180410) no-repeat;
+      text-indent: -9999px;
+      vertical-align: top;
+      width: 20px;
+      height: 17px;
+      margin-top: 1px;
+      background-position: 0px -120px;
+      text-indent: 0;
+  }
+  
+  .btn_like .ani_heart_m {
+      margin: -63px 0 0 -63px;
+  }
+  
+  .ani_heart_m {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 125px;
+      height: 125px;
+      margin: -63px 0 0 -63px;
+      pointer-events: none;
+  }
+  
+  .ani_heart_m.hi {
+      background-image: url(https://mk.kakaocdn.net/dn/emoticon/static/images/webstore/retina/zzim_on_m.png);
+      -webkit-background-size: 9000px 125px;
+      background-size: 9000px 125px;
+      animation: on_m 1.06s steps(72);
+  }
+  
+  .ani_heart_m.bye {
+      background-image: url(https://mk.kakaocdn.net/dn/emoticon/static/images/webstore/retina/zzim_off_m.png);
+      -webkit-background-size: 8250px 125px;
+      background-size: 8250px 125px;
+      animation: off_m 1.06s steps(66);
+  }
+  
+  @keyframes on_m {
+    from { background-position: 0 }
+    to { background-position: -9000px }
+  }
+  
+  @keyframes off_m {
+    from { background-position: 0 }
+    to { background-position: -8250px }
+  }

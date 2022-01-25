@@ -24,14 +24,14 @@ ol,ul,li,a{
 }
 
 .container{
-    min-width: 1080px;
+    min-width: 1200px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 main{
-    width: 1080px;
+    width: 1200px;
     margin-top: 50px;
     display: flex;
 }
@@ -44,7 +44,7 @@ main{
     width: 260px;
     margin-right: 14px;
     background-color: white;
-    box-shadow: 0px 0px 3px 3px #ddd;
+    border: 2px solid #ededed;
 }
 
 .box {
@@ -93,9 +93,8 @@ main{
 /* 오른쪽 */
 .right{
     flex: 1 0 0;
-    border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0px 0px 3px 3px #ddd;
+    border: 2px solid #ededed;
     background-color: white;
 }
 
@@ -103,17 +102,20 @@ main{
 /* 제목 부분 */
 .title{
     display: flex;
+    padding: 30px 25px 20px 25px;
     border-bottom: 1px solid #ddd;
 }
 
 .title > p{
-    padding: 15px;
     color: #A16E50;
     font-weight: 500;
+    font-size: 21px;
+    font-weight: bolder;
 }
 
 .title > p > span{
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: bolder;
 }
 
 /* 테이블 부분 */
@@ -140,6 +142,12 @@ main{
 .row:nth-of-type(1){
     border-bottom: 2px solid #ddd;
 }
+
+.table-column{
+    font-size: 15px;
+    font-weight: 800;
+}
+
 
 /* 첫번째 줄을 제외한 4번째 칸 전체 */
 .row:not(:nth-of-type(1)) > .column:nth-of-type(4){
