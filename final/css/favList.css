@@ -5,10 +5,6 @@ body, html{
     padding: 0;
 }
 
-body{
-    background-color: #ededed;
-}
-
 body *{
     margin: 0;
     padding: 0;
@@ -24,29 +20,30 @@ ol,ul,li,a{
 }
 
 .container{
-    min-width: 1080px;
+    min-width: 1200px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 main{
-    width: 1080px;
+    width: 1200px;
     margin-top: 50px;
     display: flex;
 }
 
 
 /* 왼쪽 */
-.left{
-    position: sticky;
-    top: 10px;
+.left {
     border-radius: 10px;
-    height: 750px;
+    height: 800px;
     width: 260px;
     margin-right: 14px;
     background-color: white;
-    box-shadow: 0px 0px 3px 3px #ddd;
+    border: 2px solid #ededed;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 .box {
@@ -95,9 +92,8 @@ main{
 /* 오른쪽 */
 .right{
     flex: 1 0 0;
-    border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0px 0px 3px 3px #ddd;
+    border: 2px solid #ededed;
     background-color: white;
 }
 
@@ -283,25 +279,25 @@ main{
 }
 
 .class{
-    width: 252px;
-    height: 422px;
+    width: 274px;
+    height: 445px;
     border: 1px solid gainsboro;
     box-shadow: 3px 2px 5px 2px #0000001a;
     border-radius: 5px;
     position: relative;
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
 
 .class:nth-of-type(3n+2){
-    margin: 5px 14px;
+    margin: 10px 40px;
 }
 
 .class img{
-    width: 252px;
-    height: 252px;
+    width: 272px;
+    height: 272px;
     position: relative;
     object-fit: cover;
-    transform:scale(1.0);        
+    transform: scale(1.0);
     transition: transform .5s;
 }
 
@@ -335,8 +331,6 @@ main{
 }
 
 .detail-info-bottom{
-    position: absolute;
-    width: 224px;
     bottom: 10px;
     border-top: 1px solid #ccc;
     padding-top: 10px;

@@ -115,6 +115,9 @@ label[for=saveEmail] > span{
     color: #989696;
     margin: 0 5px;
 }
+#pw-signup > a:hover{
+    color: #575757;
+}
 
 form > button{
     width: 100%;
@@ -138,6 +141,9 @@ form > button:hover{
     align-items: center;
     margin: 20px 0;
     border: 1px solid #ddd;
+}
+.sns:hover{
+    background-color: rgb(245, 245, 245);
 }
 .sns > div{
     display: flex;

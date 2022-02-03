@@ -1,0 +1,28 @@
+{
+						data: null,
+						render: function (data, type, row) {
+							let d = 1;
+
+							const select = $("<select>");
+							for(let j=0; j<3; j++){
+								let option = $("<option>");
+								option.val(j);
+								if(j == 0){
+									option.text("정상");
+								}else if(j == 1){
+									option.text("정지");
+								}else if(j == 2){
+									option.text("삭제");
+								}
+
+								if(d == j){
+									option.attr("selected", "selected");
+								}
+
+								select.append(option);
+							}
+
+							return select.prop("outerHTML");
+						},
+						orderable: false
+					}
